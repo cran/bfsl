@@ -1,0 +1,15 @@
+6eb4f4bb261c19b5a5fe779775729b21 *DESCRIPTION
+ad221520d62d722aa6769eb17a90e33e *NAMESPACE
+3eca7e9bb0296b28df73be957dfaa2ad *NEWS.md
+ed5b1d85f8e2155196c8baa3f846793e *R/bfsl.R
+d8eca0ec34e40103fee30132bf926f34 *R/data.R
+e5eb1e25cb0dd81f5136c3e511afc70d *README.md
+efc2645cc91da49b5cb3d7c3ad020cc2 *data/pearson_york.RData
+559747bed6eac425f8a2b6564465ae7a *man/bfsl.Rd
+42cd57efbfd2005581b6cb2d64fa3785 *man/bfsl_control.Rd
+76a8e13030d02231144cda5446989d00 *man/figures/README-plot-1.png
+af14b607e5c182a24d4f911d54afb073 *man/pearson_york.Rd
+c134eb31a5c7f4df41ae2eb13727efd1 *man/plot.bfsl.Rd
+420185477c749d568552e40e187b4eae *man/print.bfsl.Rd
+90859ac79433dd31c96c24f470f323b2 *tests/testthat.R
+f9d26d24c6e771ca0d4afcc9f50327c0 *tests/testthat/test-bfsl.R

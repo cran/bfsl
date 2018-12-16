@@ -1,0 +1,26 @@
+#' Example data
+#'
+#' Example data set of Pearson (1901) with weights suggested by York (1966).
+#'
+#' @docType data
+#'
+#' @format A data frame with 10 rows and 4 variables:
+#' \describe{
+#'   \item{x}{\emph{x} observations}
+#'   \item{w_x}{weights of \emph{x}}
+#'   \item{y}{\emph{y} observations}
+#'   \item{w_y}{weights of \emph{y}}
+#' }
+#'
+#' @references Pearson K. (1901), On lines and planes of closest fit to systems
+#' of points in space. \emph{The London, Edinburgh, and Dublin Philosophical
+#' Magazine and Journal of Science}, 2(11), 59-572,
+#' https://doi.org/10.1080/14786440109462720
+#' @references York, D. (1966). Least-squares fitting of a straight line.
+#' \emph{Canadian Journal of Physics}, 44(5), 1079–1086,
+#' https://doi.org/10.1139/p66-090
+#'
+#' @examples
+#' bfsl(pearson_york)
+#'
+"pearson_york"
