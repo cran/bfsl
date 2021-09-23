@@ -2,11 +2,27 @@
 % Please edit documentation in R/bfsl.R
 \name{bfsl}
 \alias{bfsl}
+\alias{bfsl.default}
+\alias{bfsl.formula}
 \title{Calculates the Best-fit Straight Line}
 \usage{
-bfsl(x, y = NULL, sd_x = 0, sd_y = 1, r = 0, control = bfsl_control())
+bfsl(...)
+
+\method{bfsl}{default}(x, y = NULL, sd_x = 0, sd_y = 1, r = 0, control = bfsl_control(), ...)
+
+\method{bfsl}{formula}(
+  formula,
+  data = parent.frame(),
+  sd_x,
+  sd_y,
+  r = 0,
+  control = bfsl_control(),
+  ...
+)
 }
 \arguments{
+\item{...}{Further arguments passed to or from other methods.}
+
 \item{x}{A vector of \emph{x} observations or a data frame (or an
 object coercible by \code{\link{as.data.frame}} to a data frame) containing
 the named vectors \emph{x}, \emph{y}, and optionally \emph{sd_x},
@@ -32,6 +48,11 @@ have the same correlation coefficient.}
 
 \item{control}{A list of control settings. See \code{\link{bfsl_control}}
 for the names of the settable control values and their effect.}
+
+\item{formula}{A formula specifying the bivariate model (as in \code{\link{lm}},
+but here only \code{y ~ x} makes sense).}
+
+\item{data}{A data.frame containing the variables of the model.}
 }
 \value{
 An object of class "\code{bfsl}", which is a \code{list} containing
@@ -39,6 +60,10 @@ the following components:
 \item{coefficients}{A \code{2x2} matrix with columns of the fitted coefficients
 (intercept and slope) and their standard errors.}
 \item{chisq}{The goodness of fit  (see Details).}
+\item{fitted.values}{The fitted mean values.}
+\item{residuals}{The residuals, that is \code{y} observations minus fitted values.}
+\item{df.residual}{The residual degrees of freedom.}
+\item{cov.ab}{The covariance of the slope and intercept.}
 \item{control}{The control \code{list} used, see the \code{control} argument.}
 \item{convInfo}{A \code{list} with convergence information.}
 \item{call}{The matched call.}
@@ -79,13 +104,14 @@ indicates overfitting: either the model is improperly fitting noise, or the
 measurement errors have been overestimated.
 }
 \examples{
-x = pearson_york$x
-y = pearson_york$y
-sd_x = 1/sqrt(pearson_york$w_x)
-sd_y = 1/sqrt(pearson_york$w_y)
+x = pearson_york_data$x
+y = pearson_york_data$y
+sd_x = 1/sqrt(pearson_york_data$w_x)
+sd_y = 1/sqrt(pearson_york_data$w_y)
 bfsl(x, y, sd_x, sd_y)
+bfsl(y~x, pearson_york_data, sd_x, sd_y)
 
-fit = bfsl(pearson_york)
+fit = bfsl(pearson_york_data)
 plot(fit)
 
 }
